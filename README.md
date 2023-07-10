@@ -2,7 +2,15 @@
 
 En el siguiente README encontrarás a detalle la solución de la prueba técnica que ha sido asignada la cual es la siguiente.
 
-##Tener en cuenta que este archivo de texto, se irá actualizando a medida que se completen los tres (3) puntos faltantes.
+##Tener en cuenta que este archivo de texto, se irá actualizando a medida que se completen los dos (2) puntos faltantes.
+
+**Instalación local**
+1) La carpeta "json-server" abirla en consola. Seguido ejecutar "npm i" para luego ejecutar "npm run server".
+Asegurarse de que el servidor corra en local host 3000
+
+2) En la carpeta raíz se encuentra el proyecto front, que consta de los mismos pasos anterorios.
+"npm i"
+"npm run dev"
 
 ##1.1 Alcance de la aplicación
 <br />
