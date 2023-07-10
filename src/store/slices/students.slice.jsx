@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
-import { setIsLoading } from "./isLoading.slice";
 import { useDispatch } from "react-redux";
 
 export const studentsSlice = createSlice({
@@ -15,45 +14,34 @@ export const studentsSlice = createSlice({
 });
 
 export const getStudentsThunk = () => (dispatch) => {
-  dispatch(setIsLoading(true));
   return axios
     .get("students?_embed=Grade")
-    .then((res) => dispatch(setStudents(res.data)))
-    .finally(() => dispatch(setIsLoading(false)));
+    .then((res) => dispatch(setStudents(res.data)));
 };
 
 export const getStudentIdThunk = (id) => (dispatch) => {
-  dispatch(setIsLoading(true));
-  return axios
-    .get(`students/${id}?_embed=Grade`)
-    .then((res) => dispatch(setStudents(res.data)))
-    .finally(() => dispatch(setIsLoading(false)));
+  return axios.get(`students/${id}?_embed=Grade`).then((res) => {
+    dispatch(setStudents(res.data));
+    dispatch(setCodeStatus(res.status));
+  });
 };
 
 export const addStudentThunk = (data) => (dispatch) => {
-  dispatch(setIsLoading(true));
   return axios
     .post(`students`, data)
     .then((res) => dispatch(getStudentsThunk()))
-    .catch((error) => console.log(error.response))
-    .finally(() => dispatch(setIsLoading(false)));
+    .catch((error) => console.log(error.response));
 };
 
 export const updateStudentThunk = (data, id) => (dispatch) => {
-  dispatch(setIsLoading(true));
   return axios
     .put(`students/${id}`, data)
     .then((res) => dispatch(getStudentsThunk()))
-    .catch((error) => console.log(error.response))
-    .finally(() => dispatch(setIsLoading(false)));
+    .catch((error) => console.log(error.response));
 };
 
 export const deleteStudentThunk = (id) => (dispatch) => {
-  dispatch(setIsLoading(true));
   axios.delete(`students/${id}`).then((res) => dispatch(getStudentsThunk()));
-  setTimeout(() => {
-    dispatch(setIsLoading(false));
-  }, 2000);
 };
 
 export const { setStudents } = studentsSlice.actions;

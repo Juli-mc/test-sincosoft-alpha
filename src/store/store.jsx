@@ -4,15 +4,14 @@ import teachersSlice from "./slices/teachers.slice";
 import subjectsSlice, { subjectsStatusSlice } from "./slices/subjects.slice";
 import yearSlice from "./slices/years.slice";
 import gradesSlice from "./slices/grades.slice";
-import isLoadingSlice from "./slices/isLoading.slice";
+import codeStatusSlice from "./slices/status.slice";
 
 export default configureStore({
   reducer: {
-    isLoading: isLoadingSlice,
+    codeStatus: codeStatusSlice,
     students: studentsSlice,
     teachers: teachersSlice,
     subjects: subjectsSlice,
-    subjectsStatus: subjectsStatusSlice,
     year: yearSlice,
     grades: gradesSlice,
   },

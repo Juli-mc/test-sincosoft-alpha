@@ -7,6 +7,9 @@ import {
   Tab,
   TabPanel,
   Button,
+  Card,
+  CardBody,
+  Typography,
 } from "@material-tailwind/react";
 import {
   deleteStudentThunk,
@@ -80,6 +83,22 @@ const Home = () => {
             </Tab>
           ))}
         </TabsHeader>
+        {/* <h2 class="text sm">Año escolar:</h2>
+      {year.map((year) => (
+        <ul>{year.Year}</ul>
+        ))} */}
+        <div>
+          <Card className="pt-0 pb-0 ml-auto mr-auto w-96">
+            <CardBody>
+              <Typography variant="h5" color="blue-gray" className="mb-2">
+                AÑO ESCOLAR:
+              </Typography>
+              {year.map((year) => (
+                <Typography>{year.Year}</Typography>
+              ))}
+            </CardBody>
+          </Card>
+        </div>
         {isLoading ? (
           <LoadingScreen />
         ) : (
@@ -303,10 +322,6 @@ const Home = () => {
           </TabsBody>
         )}
       </Tabs>
-      <h2 class="text sm">Año escolar:</h2>
-      {year.map((year) => (
-        <ul>{year.Year}</ul>
-      ))}
     </div>
   );
 };

@@ -53,6 +53,15 @@
       "phone": "485416486",
       "numId": "454165168",
       "id": 6
+    },
+    {
+      "name": "Estudiante",
+      "lastName": "Back-end",
+      "address": "cll 455",
+      "age": "20",
+      "phone": "645641651",
+      "numId": "156156165",
+      "id": 7
     }
   ],
   "teachers": [
@@ -102,12 +111,12 @@
       "id": 5
     },
     {
-      "name": "Pinocho ",
-      "lastName": "Madera",
-      "address": "Galicia",
-      "age": "99",
-      "phone": "55156412",
-      "numId": "6948",
+      "name": "Tata",
+      "lastName": "Martino",
+      "address": "México",
+      "age": "50",
+      "phone": "56786789",
+      "numId": "5453564",
       "id": 6
     },
     {
@@ -127,6 +136,15 @@
       "phone": "54654181",
       "numId": "5164684684",
       "id": 8
+    },
+    {
+      "name": "Valentín",
+      "lastName": "Oliva",
+      "address": "Cll 5 Buenos aires ",
+      "age": "25",
+      "phone": "65418161",
+      "numId": "156156064",
+      "id": 9
     }
   ],
   "Year": [

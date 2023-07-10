@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
-import { setIsLoading } from "./isLoading.slice";
+
 import { useDispatch } from "react-redux";
 
 export const subjectsSlice = createSlice({
@@ -26,19 +26,13 @@ export const subjectsStatusSlice = createSlice({
 });
 
 export const getSubjectsThunk = () => (dispatch) => {
-  dispatch(setIsLoading(true));
-  return axios
-    .get("Subject")
-    .then((res) => dispatch(setSubjects(res.data)))
-    .finally(() => dispatch(setIsLoading(false)));
+  return axios.get("Subject").then((res) => dispatch(setSubjects(res.data)));
 };
 
 export const addSubjectThunk = (data) => (dispatch) => {
-  dispatch(setIsLoading(true));
   return axios
     .post("Subject", data)
-    .then((res) => dispatch(setSubjects(res.data)))
-    .finally(() => dispatch(setIsLoading(false)));
+    .then((res) => dispatch(setSubjects(res.data)));
 };
 
 export const getSubjectIdThunk = (id) => (dispatch) => {

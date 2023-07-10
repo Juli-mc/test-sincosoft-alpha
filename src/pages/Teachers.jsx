@@ -9,7 +9,7 @@ import {
 } from "@material-tailwind/react";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTeacherThunk } from "../store/slices/teachers.slice";
 
 const Students = () => {
@@ -21,6 +21,7 @@ const Students = () => {
   const [checkbox, setCheckbox] = useState(false);
   const dispatch = useDispatch();
   const [successAlert, setSuccesAlert] = useState(undefined);
+  const codeStatus = useSelector((state) => state.codeStatus);
 
   const addTeacher = (data) => {
     console.log(data);
@@ -321,7 +322,7 @@ const Students = () => {
         <Button type="submit" className="m-5" onClick={addTeacher}>
           Añadir
         </Button>
-        {successAlert === true && (
+        {codeStatus === 200 && (
           <div className="flex w-full flex-col gap-2">
             <Alert
               color="green"

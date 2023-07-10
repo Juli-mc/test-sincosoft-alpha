@@ -35,6 +35,7 @@ const StudentDetail = ({}) => {
   const [deleted, setDeleted] = useState(true);
   const [update, setUpdate] = useState(false);
   const [successAlert, setSuccessAlert] = useState(undefined);
+  const codeStatus = useSelector((state) => state.codeStatus);
 
   const handleDelete = (id) => {
     dispatch(deleteStudentThunk(id));
@@ -54,10 +55,10 @@ const StudentDetail = ({}) => {
     console.log(data);
     dispatch(updateStudentThunk(data, id));
     setSuccessAlert(true);
+    setSuccessAlert(codeStatus);
+    setUpdate(false);
     setTimeout(() => {
-      console.log(successAlert);
       setSuccessAlert(false);
-      setUpdate(false);
     }, 2000);
   };
 
@@ -177,7 +178,7 @@ const StudentDetail = ({}) => {
         <>
           <Card
             className="justify-center mt-8 mb-2 ml-auto mr-auto w-80 max-w-screen-lg sm:w-70 "
-            color="transparent"
+            color="white"
             shadow={true}
           >
             <Typography variant="h4" color="blue-gray">
@@ -443,7 +444,7 @@ const StudentDetail = ({}) => {
               >
                 Actualizar
               </Button>
-              {successAlert === true && (
+              {successAlert === 200 && (
                 <div className="flex w-full flex-col gap-2">
                   <Alert
                     color="green"
@@ -455,6 +456,21 @@ const StudentDetail = ({}) => {
                     }
                   >
                     Datos del estudiante actualizados con éxito.
+                  </Alert>
+                </div>
+              )}
+              {successAlert != 200 && (
+                <div className="flex w-full flex-col gap-2">
+                  <Alert
+                    color="red"
+                    icon={
+                      <InformationCircleIcon
+                        strokeWidth={2}
+                        className="h-6 w-6"
+                      />
+                    }
+                  >
+                    Ooopsss.
                   </Alert>
                 </div>
               )}

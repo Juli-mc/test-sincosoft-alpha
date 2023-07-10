@@ -37,12 +37,11 @@ const SubjectDetail = ({}) => {
   const updateSubject = (data) => {
     dispatch(updateSubjectThunk(id, data));
     console.log(id);
-    // console.log(data, "datazo");
   };
 
   return (
     <div>
-      <Card className="mt-6 w-96">
+      <Card className="justify-center mb-6 ml-auto mr-auto mt-6 w-96 ">
         <CardBody>
           <Typography variant="h5" color="blue-gray" className="mb-2">
             Asignación de materia

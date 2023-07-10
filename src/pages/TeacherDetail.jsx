@@ -27,6 +27,8 @@ const TeacherDetail = ({}) => {
   const [update, setUpdate] = useState(false);
   const [successAlert, setSuccessAlert] = useState(undefined);
   const [fixRender, setFixRender] = useState(true);
+  const codeStatus = useSelector((state) => state.codeStatus);
+
   const handleDelete = (id) => {
     dispatch(deleteTeacherThunk(id));
     setDeleted(false);
@@ -44,20 +46,18 @@ const TeacherDetail = ({}) => {
   const updateTeacher = (data) => {
     console.log(data);
     dispatch(updateTeacherThunk(data, id));
-    setSuccessAlert(true);
+    setSuccessAlert(codeStatus);
+    setUpdate(false);
     setTimeout(() => {
       setSuccessAlert(false);
-      //   setUpdate(false);
     }, 2000);
-    setTimeout(() => {
-      setUpdate(false);
-    }, 500);
   };
 
   useEffect(() => {
     dispatch(getTeacherIdThunk(id));
   }, [update]);
 
+  console.log(codeStatus, "codigo");
   return (
     <div>
       {deleted ? (
@@ -428,7 +428,7 @@ const TeacherDetail = ({}) => {
               >
                 Actualizar
               </Button>
-              {successAlert === true && (
+              {successAlert === 200 && (
                 <div className="flex w-full flex-col gap-2">
                   <Alert
                     color="green"
@@ -440,6 +440,22 @@ const TeacherDetail = ({}) => {
                     }
                   >
                     Datos del docente actualizados con éxito.
+                  </Alert>
+                </div>
+              )}
+
+              {successAlert != 200 && (
+                <div className="flex w-full flex-col gap-2">
+                  <Alert
+                    color="red"
+                    icon={
+                      <InformationCircleIcon
+                        strokeWidth={2}
+                        className="h-6 w-6"
+                      />
+                    }
+                  >
+                    Oooopsss
                   </Alert>
                 </div>
               )}
