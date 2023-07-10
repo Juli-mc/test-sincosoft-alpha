@@ -43,13 +43,25 @@ const TeacherDetail = ({}) => {
     handleSubmit,
   } = useForm();
 
+  // const updateTeacher = (data) => {
+  //   console.log(data);
+  //   dispatch(updateTeacherThunk(data, id));
+  //   setSuccessAlert(true);
+  //   setSuccessAlert(codeStatus);
+  //   setUpdate(false);
+  //   setTimeout(() => {
+  //     setSuccessAlert(false);
+  //   }, 2000);
+  // };
+
   const updateTeacher = (data) => {
     console.log(data);
     dispatch(updateTeacherThunk(data, id));
     setSuccessAlert(codeStatus);
-    setUpdate(false);
+    setUpdate(true);
     setTimeout(() => {
-      setSuccessAlert(false);
+      setSuccessAlert(undefined);
+      setUpdate(false);
     }, 2000);
   };
 
@@ -57,7 +69,7 @@ const TeacherDetail = ({}) => {
     dispatch(getTeacherIdThunk(id));
   }, [update]);
 
-  console.log(codeStatus, "codigo");
+  console.log(successAlert, "codigo");
   return (
     <div>
       {deleted ? (
@@ -416,16 +428,7 @@ const TeacherDetail = ({}) => {
                   {...register("numId")}
                 />
               </div>
-              <Button
-                type="submit"
-                className="m-5"
-                onClick={
-                  (() => updateTeacher,
-                  setTimeout(() => {
-                    () => setUpdate(false);
-                  }, 2000))
-                }
-              >
+              <Button type="submit" className="m-5" onClick={updateTeacher}>
                 Actualizar
               </Button>
               {successAlert === 200 && (
@@ -444,7 +447,7 @@ const TeacherDetail = ({}) => {
                 </div>
               )}
 
-              {successAlert != 200 && (
+              {/* {successAlert != 200 && (
                 <div className="flex w-full flex-col gap-2">
                   <Alert
                     color="red"
@@ -458,7 +461,7 @@ const TeacherDetail = ({}) => {
                     Oooopsss
                   </Alert>
                 </div>
-              )}
+              )} */}
             </form>
           </Card>
         </>

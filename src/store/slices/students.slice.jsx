@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "../../utils/axios";
 import { useDispatch } from "react-redux";
+import { setCodeStatus } from "./status.slice";
 
 export const studentsSlice = createSlice({
   name: "students",
@@ -22,7 +23,7 @@ export const getStudentsThunk = () => (dispatch) => {
 export const getStudentIdThunk = (id) => (dispatch) => {
   return axios.get(`students/${id}?_embed=Grade`).then((res) => {
     dispatch(setStudents(res.data));
-    dispatch(setCodeStatus(res.status));
+    // dispatch(setCodeStatus(res.status));
   });
 };
 
@@ -36,7 +37,10 @@ export const addStudentThunk = (data) => (dispatch) => {
 export const updateStudentThunk = (data, id) => (dispatch) => {
   return axios
     .put(`students/${id}`, data)
-    .then((res) => dispatch(getStudentsThunk()))
+    .then((res) => {
+      dispatch(setCodeStatus(res.status));
+      console.log(res);
+    })
     .catch((error) => console.log(error.response));
 };
 

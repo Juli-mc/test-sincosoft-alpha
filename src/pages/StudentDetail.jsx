@@ -54,11 +54,11 @@ const StudentDetail = ({}) => {
   const updateStudent = (data) => {
     console.log(data);
     dispatch(updateStudentThunk(data, id));
-    setSuccessAlert(true);
     setSuccessAlert(codeStatus);
-    setUpdate(false);
+    setUpdate(true);
     setTimeout(() => {
       setSuccessAlert(false);
+      setUpdate(false);
     }, 2000);
   };
 
@@ -71,6 +71,8 @@ const StudentDetail = ({}) => {
     dispatch(getGradesThunk());
     dispatch(getSubjectsThunk());
   }, [update]);
+
+  console.log(codeStatus);
 
   return (
     <div>
@@ -432,16 +434,7 @@ const StudentDetail = ({}) => {
                   {...register("numId")}
                 />
               </div>
-              <Button
-                type="submit"
-                className="m-5"
-                onClick={
-                  (updateStudent,
-                  setTimeout(() => {
-                    () => setUpdate(false);
-                  }, 2000))
-                }
-              >
+              <Button type="submit" className="m-5" onClick={updateStudent}>
                 Actualizar
               </Button>
               {successAlert === 200 && (
@@ -459,7 +452,7 @@ const StudentDetail = ({}) => {
                   </Alert>
                 </div>
               )}
-              {successAlert != 200 && (
+              {/* {successAlert != 200 && (
                 <div className="flex w-full flex-col gap-2">
                   <Alert
                     color="red"
@@ -473,7 +466,7 @@ const StudentDetail = ({}) => {
                     Ooopsss.
                   </Alert>
                 </div>
-              )}
+              )} */}
             </form>
           </Card>
         </>
