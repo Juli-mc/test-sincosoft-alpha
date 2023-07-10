@@ -1,0 +1,201 @@
+{
+  "students": [
+    {
+      "name": "Bart",
+      "lastName": "Simpson",
+      "address": "Springfield av 5",
+      "age": "18",
+      "phone": "455415164",
+      "numId": "6986333",
+      "id": 1
+    },
+    {
+      "name": "Julian",
+      "lastName": "Marin",
+      "address": "cll 10 #15-12",
+      "age": "22",
+      "phone": "5723256118",
+      "numId": "41185314",
+      "id": 2
+    },
+    {
+      "name": "Neymar",
+      "lastName": "Jr da Silva",
+      "address": "cr 15# 56",
+      "age": "32",
+      "phone": "658484816",
+      "numId": "1251641",
+      "id": 3
+    },
+    {
+      "name": "Jotica",
+      "lastName": "Ramirez",
+      "age": "22",
+      "address": "Cll 5 #12-15",
+      "phone": "3204441122",
+      "numId": "1548556",
+      "id": 4
+    },
+    {
+      "name": "ANTONIO",
+      "lastName": "MARIN",
+      "address": "CALLE 10",
+      "age": "56",
+      "phone": "3259055",
+      "numId": "3259055",
+      "id": 5
+    },
+    {
+      "name": "Zinedine",
+      "lastName": "Zidane",
+      "address": "Le france",
+      "age": "55",
+      "phone": "485416486",
+      "numId": "454165168",
+      "id": 6
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Sebastián",
+      "lastName": "Rodriguez",
+      "address": "Castilla",
+      "age": "36",
+      "phone": "415512",
+      "numId": "26864689",
+      "id": 1
+    },
+    {
+      "name": "Profesor",
+      "lastName": "Super O",
+      "address": "Chapinero centro",
+      "age": "50",
+      "phone": "3134511468",
+      "numId": "2584681",
+      "id": 2
+    },
+    {
+      "name": "Rauw",
+      "lastName": "Alejandro",
+      "address": "Calle pio 12",
+      "age": "28",
+      "phone": "5545899642",
+      "numId": "56878614",
+      "id": 3
+    },
+    {
+      "name": "Homero",
+      "lastName": "Simpson",
+      "address": "Springfield av 5",
+      "age": "50",
+      "phone": "5678599696",
+      "numId": "554478634",
+      "id": 4
+    },
+    {
+      "name": "Aristoteles ",
+      "lastName": "Sócrates",
+      "address": "Antigua grecia",
+      "age": "500",
+      "phone": "000000",
+      "numId": "000000",
+      "id": 5
+    },
+    {
+      "name": "Pinocho ",
+      "lastName": "Madera",
+      "address": "Galicia",
+      "age": "99",
+      "phone": "55156412",
+      "numId": "6948",
+      "id": 6
+    },
+    {
+      "name": "Albert ",
+      "lastName": "Einstein",
+      "address": "End of world",
+      "age": "99",
+      "phone": "26564561",
+      "numId": "6312515",
+      "id": 7
+    },
+    {
+      "name": "Jose",
+      "lastName": "Mourinho",
+      "address": "Av lisboa",
+      "age": "60",
+      "phone": "54654181",
+      "numId": "5164684684",
+      "id": 8
+    }
+  ],
+  "Year": [
+    {
+      "Year": "2023"
+    }
+  ],
+  "Subject": [
+    {
+      "id": 1,
+      "name": "Ciencias",
+      "teacherId": 1
+    },
+    {
+      "id": 2,
+      "name": "Matemáticas",
+      "teacherId": 2
+    },
+    {
+      "id": 3,
+      "name": "Música",
+      "teacherId": 3
+    },
+    {
+      "name": "Ed. Física",
+      "id": 4,
+      "codeSubject": 42,
+      "teacherId": 4
+    },
+    {
+      "teacherId": "5",
+      "id": 5
+    },
+    {
+      "name": "Ética",
+      "teacherId": "6",
+      "id": 6
+    }
+  ],
+  "Grade": [
+    {
+      "id": 1,
+      "grade": "4.5",
+      "studentId": 1,
+      "subjectId": 1
+    },
+    {
+      "id": 2,
+      "grade": "3.2",
+      "studentId": 1,
+      "subjectId": 2
+    },
+    {
+      "id": 3,
+      "grade": "4.1",
+      "studentId": 2,
+      "subjectId": 1
+    },
+    {
+      "id": 4,
+      "grade": "4.0",
+      "studentId": 2,
+      "subjectId": 2
+    },
+    {
+      "id": 5,
+      "grade": "3.5",
+      "studentId": 2,
+      "subjectId": 3
+    }
+  ]
+}
